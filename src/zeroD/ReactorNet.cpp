@@ -42,7 +42,7 @@ void ReactorNet::initialize()
     size_t n, nv;
     char buf[100];
     m_nv = 0;
-    writelog("Initializing reactor network.\n", m_verbose);
+    debuglog("Initializing reactor network.\n", m_verbose);
     if (m_reactors.empty()) {
         throw CanteraError("ReactorNet::initialize",
                            "no reactors in network!");
@@ -102,7 +102,7 @@ void ReactorNet::initialize()
 void ReactorNet::reinitialize()
 {
     if (m_init) {
-        writelog("Re-initializing reactor network.\n", m_verbose);
+        debuglog("Re-initializing reactor network.\n", m_verbose);
         m_integ->reinitialize(m_time, *this);
         m_integrator_init = true;
     } else {
